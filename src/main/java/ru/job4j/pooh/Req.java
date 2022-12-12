@@ -1,5 +1,7 @@
 package ru.job4j.pooh;
 
+import static ru.job4j.pooh.Service.GET;
+
 public class Req {
     private static final String LINE_SEPARATOR = System.lineSeparator();
     private final String httpRequestType;
@@ -26,7 +28,7 @@ public class Req {
         } else {
             param = "";
         }
-        if ("GET".equals(httpRequestType) && "topic".equals(poohMode) && "".equals(param)) {
+        if (GET.equals(httpRequestType) && "topic".equals(poohMode) && "".equals(param)) {
             param = mode[3].split(" ")[0];
         }
         return new Req(httpRequestType, poohMode, sourceName, param);
