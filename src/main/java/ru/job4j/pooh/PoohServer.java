@@ -16,8 +16,8 @@ public class PoohServer {
     private final Map<String, Service> modes = new HashMap<>();
 
     public void start() {
-        modes.put("queue", new QueueService());
-        modes.put("topic", new TopicService());
+        modes.put(QueueMode.QUEUE, new QueueService());
+        modes.put(QueueMode.TOPIC, new TopicService());
         ExecutorService pool = Executors.newFixedThreadPool(
                 Runtime.getRuntime().availableProcessors()
         );

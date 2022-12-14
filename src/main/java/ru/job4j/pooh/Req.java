@@ -28,7 +28,7 @@ public class Req {
         } else {
             param = "";
         }
-        if (GET.equals(httpRequestType) && "topic".equals(poohMode) && "".equals(param)) {
+        if (GET.equals(httpRequestType) && QueueMode.TOPIC.equals(poohMode) && "".equals(param)) {
             param = mode[3].split(" ")[0];
         }
         return new Req(httpRequestType, poohMode, sourceName, param);
